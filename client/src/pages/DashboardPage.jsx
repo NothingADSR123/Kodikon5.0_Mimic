@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import ReactMarkdown from 'react-markdown';
 import Scene from '../components/3d/Scene';
 import '../styles/DashboardPage.css'; // Corrected the path assuming CSS is in the same folder
+import AudioBot from '../components/AudioBot';
 
 const API_URL = 'http://localhost:5001/api/ai/generate-scene';
 
@@ -11,6 +12,7 @@ const DashboardPage = () => {
   const [prompt, setPrompt] = useState('a table with an apple on it');
   const [sceneData, setSceneData] = useState({ objects: [], relationships: [], sequence: [] });
   const [explanation, setExplanation] = useState('');
+  const [explanationTimestamp, setExplanationTimestamp] = useState(Date.now());
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
@@ -27,21 +29,34 @@ const DashboardPage = () => {
 
       const { sceneGraph, explanation } = response.data;
       
-      if (sceneGraph && sceneGraph.objects) {
+      // More flexible handling - check if sceneGraph exists in different formats
+      if (sceneGraph) {
         console.log("Step 3: Valid SceneGraph received. Setting state.", sceneGraph);
         setSceneData(sceneGraph);
+      } else if (response.data.objects) {
+        // If objects are at top level instead of nested in sceneGraph
+        console.log("Step 3: SceneGraph at top level. Setting state.", response.data);
+        setSceneData(response.data);
       } else {
-        throw new Error("Backend response missing a valid 'sceneGraph'.");
+        console.error("Backend response structure:", JSON.stringify(response.data, null, 2));
+        throw new Error("Backend response missing a valid 'sceneGraph'. Check console for response structure.");
       }
 
       if (explanation) {
         console.log("Step 4: Explanation received.", explanation);
         setExplanation(explanation);
+        setExplanationTimestamp(Date.now()); // Force AudioBot to remount
+      } else if (response.data.explanation) {
+        // Check if explanation is at top level
+        console.log("Step 4: Explanation at top level.", response.data.explanation);
+        setExplanation(response.data.explanation);
+        setExplanationTimestamp(Date.now());
       }
 
     } catch (err) {
       console.error("Step FAIL: An error occurred while fetching from the backend.", err);
-      setError('Failed to generate scene. Please check the console for details.');
+      console.error("Error details:", err.response?.data || err.message);
+      setError(err.response?.data?.error || err.message || 'Failed to generate scene. Please check the console for details.');
     }
     setIsLoading(false);
   };
@@ -66,13 +81,21 @@ const DashboardPage = () => {
         <div className="prompt-controls">
           <h3>Enter a concept to visualize:</h3>
           <textarea
- style={{ maxWidth: "400px", width: "100%" }}            value={prompt}
+            value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="e.g., 'the water cycle' or 'a car at a traffic light'"
           />
           <button onClick={handleGenerateScene} disabled={isLoading}>
             {isLoading ? 'Generating...' : 'Visualize'}
           </button>
+          
+          {/* Audio Bot - Auto-regenerates with new explanations */}
+          {explanation && (
+            <div style={{ marginTop: '15px' }}>
+              <AudioBot text={explanation} key={explanationTimestamp} autoRegenerate={true} />
+            </div>
+          )}
+          
           {error && <p className="error-text">{error}</p>}
         </div>
         {/* --- END OF CORRECTION --- */}
