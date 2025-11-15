@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../assets/background.png';
 import logoImage from '../assets/logo.png';
 import AuthFlipCard from '../components/auth/AuthFlipCard';
@@ -12,6 +13,7 @@ export default function LandingPage() {
   const DARK_TEXT = '#2C3E50';
   const LIGHT_TEXT = '#5A6C7D';
 
+  const navigate = useNavigate();
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const howRef = useRef(null);
@@ -340,6 +342,7 @@ export default function LandingPage() {
             <button style={styles.navBtn} onClick={() => scrollTo(aboutRef)}>About</button>
             <button style={styles.navBtn} onClick={() => scrollTo(howRef)}>How it works</button>
             <button style={styles.navBtn} onClick={() => scrollTo(contactRef)}>Contact</button>
+            <button style={styles.navBtn} onClick={() => navigate('/mimic-dashboard')}>Dashboard</button>
             <button style={styles.signUp} onClick={() => scrollTo(loginRef)}>Sign Up</button>
           </nav>
         </div>

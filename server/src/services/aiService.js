@@ -120,4 +120,113 @@ const generateSceneJson = async (userInput) => {
   throw lastError; // All retries failed
 };
 
-module.exports = { generateSceneJson };
+const generateChatResponse = async (userMessage) => {
+  try {
+    const systemPrompt = `You are Mimic's learning copilot for neurodivergent students.
+
+When a user asks about a concept, provide a simple, clear explanation.
+
+Rules for your explanation:
+- Explain the concept in very clear, simple language.  
+- Use short bullet points or numbered points, like:  
+  - point 1  
+  - point 2  
+- Do NOT use any markdown symbols like ** or __.  
+- Keep each point 1–2 lines so it is easy to read.
+- Be friendly and supportive.
+- If the user asks for something unsafe or not allowed, gently refuse and explain why.
+
+User's message: "${userMessage}"
+
+Provide a clear explanation following all the rules above.`;
+
+    const result = await model.generateContent(systemPrompt);
+
+    const response = result.response;
+    const text = response.text();
+    
+    return text;
+  } catch (error) {
+    console.error('Error in generateChatResponse:', error);
+    throw error;
+  }
+};
+
+const generateQuiz = async (concept) => {
+  try {
+    const quizPrompt = `You are Mimic's quiz generator for neurodivergent students.
+
+Generate exactly 3 multiple choice questions about: "${concept}"
+
+CRITICAL FORMAT RULES:
+- Output ONLY the 3 questions, nothing else.
+- Each question MUST follow this exact format:
+
+Q1. Question text?
+A) option one
+B) option two
+C) option three
+D) option four
+Answer: B
+
+Q2. Question text?
+A) option one
+B) option two
+C) option three
+D) option four
+Answer: D
+
+Q3. Question text?
+A) option one
+B) option two
+C) option three
+D) option four
+Answer: A
+
+- Make questions friendly and not scary.
+- Questions should help check understanding of the concept.
+- Make sure one answer is clearly correct.
+- No extra text, no introductions, no markdown symbols.`;
+
+    const result = await model.generateContent(quizPrompt);
+    const response = result.response;
+    const text = response.text();
+    
+    return text;
+  } catch (error) {
+    console.error('Error in generateQuiz:', error);
+    throw error;
+  }
+};
+
+const generateReExplanation = async (concept, questionText, userAnswer, correctAnswer) => {
+  try {
+    const reExplanationPrompt = `You are Mimic's learning copilot for neurodivergent students.
+
+A student just answered a quiz question incorrectly. Help them understand why.
+
+Concept: "${concept}"
+Question: "${questionText}"
+Student chose: ${userAnswer}
+Correct answer: ${correctAnswer}
+
+Provide a SHORT, gentle re-explanation (2-3 bullet points) that:
+- Explains why the correct answer is right
+- Helps them understand the specific part of the concept they missed
+- Is encouraging and supportive (e.g., "That's okay! Let's think about it this way...")
+- Uses simple language, NO markdown symbols like ** or __
+
+Keep it brief and friendly.`;
+
+    const result = await model.generateContent(reExplanationPrompt);
+    const response = result.response;
+    const text = response.text();
+    
+    return text;
+  } catch (error) {
+    console.error('Error in generateReExplanation:', error);
+    throw error;
+  }
+};
+
+module.exports = { generateSceneJson, generateChatResponse, generateQuiz, generateReExplanation };
