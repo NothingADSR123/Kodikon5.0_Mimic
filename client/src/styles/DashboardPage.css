@@ -1,6 +1,8 @@
 /* Dashboard matching Landing Page design */
 /* Color Palette */
+
 :root {
+  padding: 0;
   --light-blue: #A7C7E7;
   --medium-blue: #7AA7C9;
   --blue-button: #5E92B0;

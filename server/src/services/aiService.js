@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // CORRECTED MODEL NAME: Use the stable and reliable pro model
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
 
 // Stage 1: The prompt that creates the simple explanation
 const getStage1Prompt = (userInput) => `

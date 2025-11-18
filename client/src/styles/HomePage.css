@@ -1,4 +1,8 @@
 /* 3D Wobble Animation for Title */
+:root{
+  padding: 0;
+}
+
 @keyframes titleWobble {
   0% {
     transform: perspective(800px) rotateY(0deg) rotateX(0deg);

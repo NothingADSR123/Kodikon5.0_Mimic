@@ -1,4 +1,7 @@
 /* Root Dashboard Container */
+root{
+  padding: 0;
+}
 .dashboard-root {
   min-height: 100vh;
   background: linear-gradient(180deg, #B8D5E8 0%, #A7C7E7 50%, #9BC2E3 100%);
@@ -318,6 +321,8 @@
 .explanation-panel {
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
 .explanation-card {
