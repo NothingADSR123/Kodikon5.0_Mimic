@@ -1,8 +1,5 @@
 {
-  "version": 2,
-  "buildCommand": "cd client && npm ci && npm run build",
+  "buildCommand": "npm --prefix client run build",
   "outputDirectory": "client/dist",
-  "devCommand": "cd client && npm run dev",
-  "installCommand": "npm --prefix client install",
-  "framework": null
+  "installCommand": "npm --prefix client install"
 }
