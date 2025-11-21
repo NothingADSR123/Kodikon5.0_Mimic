@@ -12,11 +12,12 @@ import AudioBot from '../../components/AudioBot';
 import '../../styles/MimicDashboard.css';
 import logoImage from '../../assets/logo.png';
 
-// --- OLD FUNCTIONAL BACKEND ROUTES ---
-const SCENE_API = "http://localhost:5001/api/ai/generate-scene";
-const CHAT_API = "http://localhost:5001/api/ai/chat";
-const QUIZ_API = "http://localhost:5001/api/ai/quiz";
-const REEXPLAIN_API = "http://localhost:5001/api/ai/re-explain";
+// --- API ROUTES (works for both dev and production) ---
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5001' : window.location.origin);
+const SCENE_API = `${API_BASE}/api/ai/generate-scene`;
+const CHAT_API = `${API_BASE}/api/ai/chat`;
+const QUIZ_API = `${API_BASE}/api/ai/quiz`;
+const REEXPLAIN_API = `${API_BASE}/api/ai/re-explain`;
 
 export default function MimicDashboard() {
 

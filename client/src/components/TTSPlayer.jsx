@@ -51,7 +51,8 @@ const TTSPlayer = ({ text, autoPlay = false, voiceOptions = {} }) => {
       setError(null);
 
       // Call the backend TTS API
-      const response = await fetch('http://localhost:5001/api/tts', {
+      const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5001' : window.location.origin);
+      const response = await fetch(`${API_BASE}/api/tts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ import Scene from '../components/3d/Scene';
 import '../styles/DashboardPage.css'; // Corrected the path assuming CSS is in the same folder
 import AudioBot from '../components/AudioBot';
 
-const API_URL = 'http://localhost:5001/api/ai/generate-scene';
+const API_URL = import.meta.env.VITE_API_URL || window.location.origin + '/api/ai/generate-scene';
 
 const DashboardPage = () => {
   const [prompt, setPrompt] = useState('a table with an apple on it');
