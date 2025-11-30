@@ -74,6 +74,26 @@ Mimic tests your understanding with automatically generated quizzes — and re-e
 Soft visuals • calming color palette • clean layout • reduced sensory overload.
 
 ---
+## 🖼️ Screenshots
+
+### 🌐 Homepage  
+<p align="center">
+  <img src="./client/src/assets/screenshots/homepage.png" width="900" alt="Mimic Homepage"/>
+</p>
+
+---
+
+### 🧠 Dashboard – Part 1  
+<p align="center">
+  <img src="./client/src/assets/screenshots/dashboard1.png" width="900" alt="Mimic Dashboard Part 1"/>
+</p>
+
+---
+
+### 🧩 Dashboard – Part 2  
+<p align="center">
+  <img src="./client/src/assets/screenshots/dashboard2.png" width="900" alt="Mimic Dashboard Part 2"/>
+</p>
 
 ## 🏗️ Tech Stack
 
@@ -186,7 +206,7 @@ npm install
 3️⃣ Create a .env file in the backend directory with the following variables:
 ```
 PORT=5001
-GEMINI_API_KEY= AIzaSyALg6RO3mtaWj8ucgXltdSp-16irtRHeOc
+GEMINI_API_KEY= your_api_key
 ```
 4️⃣ Start the backend server
 ```
