@@ -79,7 +79,7 @@ Soft visuals • calming color palette • clean layout • reduced sensory over
 ### 🌐 Homepage  
 <p align="center">
   <img 
-    src="./client/src/assets/Screenshots/Screenshot (785).png" 
+    src="./client/src/assets/Screenshots/Homepage.png" 
     width="900" 
     alt="Mimic Homepage"
   />
@@ -90,7 +90,7 @@ Soft visuals • calming color palette • clean layout • reduced sensory over
 ### 🧠 Dashboard – Part 1  
 <p align="center">
   <img 
-    src="./client/src/assets/Screenshots/Screenshot (786).png" 
+    src="./client/src/assets/Screenshots/dashboard1.png" 
     width="900" 
     alt="Mimic Dashboard Part 1"
   />
@@ -98,7 +98,7 @@ Soft visuals • calming color palette • clean layout • reduced sensory over
   
 <p align="center">
   <img 
-    src="./client/src/assets/Screenshots/Screenshot (787).png" 
+    src="./client/src/assets/Screenshots/dashboard2.png" 
     width="900" 
     alt="Mimic Dashboard Part 2"
   />
