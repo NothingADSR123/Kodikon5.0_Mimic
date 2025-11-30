@@ -87,7 +87,7 @@ Soft visuals • calming color palette • clean layout • reduced sensory over
 
 ---
 
-### 🧠 Dashboard – Part 1  
+### 🧠 Dashboard  
 <p align="center">
   <img 
     src="./client/src/assets/Screenshots/dashboard1.png" 
