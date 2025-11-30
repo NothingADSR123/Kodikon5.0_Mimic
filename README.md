@@ -78,22 +78,32 @@ Soft visuals • calming color palette • clean layout • reduced sensory over
 
 ### 🌐 Homepage  
 <p align="center">
-  <img src="./client/src/assets/screenshots/homepage.png" width="900" alt="Mimic Homepage"/>
+  <img 
+    src="./client/src/assets/Screenshots/Screenshot (785).png" 
+    width="900" 
+    alt="Mimic Homepage"
+  />
 </p>
 
 ---
 
 ### 🧠 Dashboard – Part 1  
 <p align="center">
-  <img src="./client/src/assets/screenshots/dashboard1.png" width="900" alt="Mimic Dashboard Part 1"/>
+  <img 
+    src="./client/src/assets/Screenshots/Screenshot (786).png" 
+    width="900" 
+    alt="Mimic Dashboard Part 1"
+  />
 </p>
-
----
-
-### 🧩 Dashboard – Part 2  
+  
 <p align="center">
-  <img src="./client/src/assets/screenshots/dashboard2.png" width="900" alt="Mimic Dashboard Part 2"/>
+  <img 
+    src="./client/src/assets/Screenshots/Screenshot (787).png" 
+    width="900" 
+    alt="Mimic Dashboard Part 2"
+  />
 </p>
+
 
 ## 🏗️ Tech Stack
 
