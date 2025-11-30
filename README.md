@@ -106,5 +106,100 @@ Soft visuals • calming color palette • clean layout • reduced sensory over
 
 ---
 
-## 📂 Project Structure
 
+## 📁 Project Structure
+
+```
+Mimic/
+├── client/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── 3d/
+│   │   │   └── AudioBot.jsx
+│   │   ├── pages/
+│   │   │   ├── MimicDashboard.jsx
+│   │   │   └── DashboardPage.jsx (legacy)
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── package.json
+│
+├── server/
+│   ├── routes/
+│   ├── controllers/
+│   ├── services/
+│   ├── index.js
+│   └── package.json
+│
+└── README.md
+```
+
+
+
+---
+
+## 🛠️ Setup Instructions
+
+### 🔧 Prerequisites
+- Node.js (v18+)  
+- npm or yarn  
+- Gemini API Key  
+- TTS Credentials (Google / Gemini Text-to-Speech)
+
+
+---
+
+## 🚀 Frontend Setup
+
+1️⃣ Clone the repository
+```bash
+git clone https://github.com/NothingADSR123/Kodikon5.0_Mimic.git
+```
+2️⃣ Navigate to the frontend directory
+```
+cd Kodikon5.0_Mimic/client
+```
+3️⃣ Install dependencies
+```
+npm install
+```
+4️⃣ Start the development server
+```
+npm start
+```
+The application will be available at:
+👉 http://localhost:3000
+
+
+
+## 🖥️ Backend Setup
+
+1️⃣Navigate to the backend directory
+```bash
+cd Kodikon5.0_Mimic/server
+```
+2️⃣ Install dependencies
+```
+npm install
+```
+3️⃣ Create a .env file in the backend directory with the following variables:
+```
+PORT=5001
+GEMINI_API_KEY=your_key_here
+```
+4️⃣ Start the backend server
+```
+npm run dev
+```
+The API will be available at:
+👉 http://localhost:5001
+
+---
+
+## 🧪 Sample API Test
+```
+curl -X POST http://localhost:5001/api/ai/generate-scene \
+  -H "Content-Type: application/json" \
+  -d '{ "prompt": "water cycle" }'
+```
