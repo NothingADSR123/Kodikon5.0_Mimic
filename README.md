@@ -1,4 +1,4 @@
-# 🌟 Mimic — AI-Powered 3D Visual Copilot  
+# 🧠 Mimic — AI-Powered 3D Visual Copilot  
 *A neuro-inclusive, multimodal learning assistant.*
 
 Mimic is an intelligent 3D visualization companion designed to help users — especially neurodivergent thinkers — understand complex concepts through **interactive 3D scenes**, **simplified explanations**, **soothing voice narration**, **adaptive chat guidance**, and **AI-generated quizzes**.
@@ -203,3 +203,31 @@ curl -X POST http://localhost:5001/api/ai/generate-scene \
   -H "Content-Type: application/json" \
   -d '{ "prompt": "water cycle" }'
 ```
+
+## 🫴🏻 Contributing
+
+1. Fork the repository  
+2. Create a new branch  
+3. Commit your changes  
+4. Push your branch  
+5. Open a Pull Request  
+
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+
+---
+
+## 🫶🏻 Acknowledgements
+
+- Gemini API  
+- Google Text-to-Speech  
+- React Three Fiber  
+- Three.js  
+- Express.js  
+- Node.js  
+
