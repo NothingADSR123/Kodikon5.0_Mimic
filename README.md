@@ -186,7 +186,7 @@ npm install
 3️⃣ Create a .env file in the backend directory with the following variables:
 ```
 PORT=5001
-GEMINI_API_KEY=your_key_here
+GEMINI_API_KEY= AIzaSyALg6RO3mtaWj8ucgXltdSp-16irtRHeOc
 ```
 4️⃣ Start the backend server
 ```
