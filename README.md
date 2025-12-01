@@ -242,14 +242,6 @@ curl -X POST http://localhost:5001/api/ai/generate-scene \
 4. Push your branch  
 5. Open a Pull Request  
 
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-
 ---
 
 ## 🫶🏻 Acknowledgements
