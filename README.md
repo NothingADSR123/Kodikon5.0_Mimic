@@ -36,8 +36,8 @@ This project was made possible by the **creativity, teamwork, and dedication** o
     </td>
 
    <td align="center" style="padding: 10px;">
-      <a href="https://github.com/sirishax" style="text-decoration:none; color:inherit;">
-        <img src="https://github.com/sirishax.png" width="110" height="110" style="border-radius:50%;"/>
+      <a href="https://github.com/chayahg" style="text-decoration:none; color:inherit;">
+        <img src="https://github.com/chayahg.png" width="110" height="110" style="border-radius:50%;"/>
         <br/><b>Chaya</b>
       </a>
     </td>
