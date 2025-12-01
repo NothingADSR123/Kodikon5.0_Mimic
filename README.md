@@ -3,9 +3,12 @@
 
 Mimic is an intelligent 3D visualization companion designed to help users — especially neurodivergent thinkers — understand complex concepts through **interactive 3D scenes**, **simplified explanations**, **soothing voice narration**, **adaptive chat guidance**, and **AI-generated quizzes**.
 
-<p align="center" style="margin-top:-20px; margin-bottom:-15px;">
-  <img src="./client/src/assets/logo.png" width="260" alt="Mimic Logo" />
+<p align="center">
+  <img src="./client/src/assets/logo_glow.gif" 
+       width="220" 
+       alt="Mimic Animated Logo" />
 </p>
+
 
 ## 👥 Contributors
 
